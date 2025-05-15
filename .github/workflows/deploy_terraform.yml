@@ -27,7 +27,7 @@ permissions:
 jobs:
   build_job:
     runs-on: ubuntu-latest
-    environment: ENVIRONMENT_REFERENCE #Should be changed, lol
+    environment: dev #Should be changed, lol
     defaults:
       run:
         working-directory: ./terraform
@@ -60,7 +60,7 @@ jobs:
 
     - name: Terraform Plan
       id: plan
-      run: terraform plan -input=false -var-file="envs/dev/vars.dev.tfvars" -out=tfplan #UPDATE VARS file
+      run: terraform plan -input=false -var-file="envs/vars.dev.tfvars" -out=tfplan #UPDATE VARS file
 
     - name: Terraform Apply
       run: terraform apply -auto-approve tfplan

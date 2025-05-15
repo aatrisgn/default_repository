@@ -30,7 +30,7 @@ jobs:
     environment: ENVIRONMENT_REFERENCE #Should be changed, lol
     defaults:
       run:
-        working-directory: ./Terraform
+        working-directory: ./terraform
     
     env:
       ARM_CLIENT_ID: "${{ secrets.CLIENT_ID_SECRET_REFERENCE }}"
